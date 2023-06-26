@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clock</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+        <div id="header">
+            <h1>Analog World Clock</h1>
+            <p id="local">local time</p>
+        </div>
+        <div class="container">
+            <div class="clock--wrapper">
+                <h2>Paris</h2>
+                <div class="clock">
+                <svg class="clockface" width="300" height="300"
+                  viewBox="-150 -150 300 300">
+                  <circle class="ring ring--seconds"
+                   cy="0" cx="0" r="145" pathlength="60"/>
+                   <circle class="ring ring--hours"
+                    cy="0" cx="0" r="145" pathlength="12"/>
+                    <text x="50" y="-5"
+                         class="date" id="France">23</text>
+                    <line class="hand hand--minute"
+                         x1="0" y1="2" x2="0" y2="-110" />
+                    <line class="hand hand--hour"
+                         x1="0" y1="2" x2="0" y2="-60" />
+                    <circle class="ring ring--center" r="3" />
+                    <line class="hand hand--second"
+                         x1="0" y1="12" x2="0" y2="-130" />
+                </svg>
+                </div> 
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="clock--wrapper">
+                <h2>Qatar</h2>
+                <div class="clock">
+                <svg class="clockface" width="300" height="300"
+                  viewBox="-150 -150 300 300">
+                  <circle class="ring ring--seconds"
+                   cy="0" cx="0" r="145" pathlength="60"/>
+                   <circle class="ring ring--hours"
+                    cy="0" cx="0" r="145" pathlength="12"/>
+                    <text x="50" y="-5"
+                         class="date" id="Qatar">23</text>
+                    
+                    <line class="hand hand--minute"
+                         x1="0" y1="2" x2="0" y2="-110" />
+                    <line class="hand hand--hour"
+                         x1="0" y1="2" x2="0" y2="-60" />
+                    <circle class="ring ring--center" r="3" />
+                    <line class="hand hand--second"
+                         x1="0" y1="12" x2="0" y2="-130" />
+                </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="clock--wrapper">        
+                <h2>New York</h2>
+                <div class="clock">
+                <svg class="clockface" width="300" height="300"
+                  viewBox="-150 -150 300 300">
+                  <circle class="ring ring--seconds"
+                   cy="0" cx="0" r="145" pathlength="60"/>
+                   <circle class="ring ring--hours"
+                    cy="0" cx="0" r="145" pathlength="12"/>
+                    <text x="50" y="-5"
+                         class="date" id="newyork">23</text>
+                    
+                    <line class="hand hand--minute"
+                         x1="0" y1="2" x2="0" y2="-110" />
+                    <line class="hand hand--hour"
+                         x1="0" y1="2" x2="0" y2="-60" />
+                    <circle class="ring ring--center" r="3" />
+                    <line class="hand hand--second"
+                         x1="0" y1="12" x2="0" y2="-130" />
+                </svg>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container3">
+            <div class="clock--wrapper">
+                <h2>Casablanca</h2>
+                <div class="clock">
+                <svg class="clockface" width="300" height="300"
+                  viewBox="-150 -150 300 300">
+                  <circle class="ring ring--seconds"
+                   cy="0" cx="0" r="145" pathlength="60"/>
+                   <circle class="ring ring--hours"
+                    cy="0" cx="0" r="145" pathlength="12"/>
+                    <text x="50" y="-5"
+                         class="date" id="Casablanca">23</text>
+                    
+                    <line class="hand hand--minute"
+                         x1="0" y1="2" x2="0" y2="-110" />
+                    <line class="hand hand--hour"
+                         x1="0" y1="2" x2="0" y2="-60" />
+                    <circle class="ring ring--center" r="3" />
+                    <line class="hand hand--second"
+                         x1="0" y1="12" x2="0" y2="-130" />
+                </svg>
+
+                </div>
+            </div>
+        </div>
+        <script>
+
+            function getLocalTime(){
+                var dt = new Date();
+                document.getElementById("local").innerHTML = "Local Time " + dt.toLocaleTimeString();
+            }
+            getLocalTime();
+            setInterval(getLocalTime,1000)  
+
+            function getQatarTime(){
+                 document.getElementById("Qatar").innerHTML= new Date().toLocaleString("en-us",{timeZone:'Asia/Qatar',
+                 timeStyle: 'medium',hourCycle:'h12'});
+           }
+           getQatarTime();
+           setInterval(getQatarTime,1000)
+
+           function getFranceTime(){
+            document.getElementById("France").innerHTML= new Date().toLocaleString("en-us",{timeZone:'Europe/Paris',
+            timeStyle: 'medium',hourCycle:'h12'});
+        }
+        getFranceTime();
+        setInterval(getFranceTime,1000)
+
+        function getCasablancaTime(){
+            document.getElementById("Casablanca").innerHTML= new Date().toLocaleString("en-us",{timeZone:'Africa/Casablanca',
+            timeStyle: 'medium',hourCycle:'h12'});
+        }
+        getCasablancaTime();
+        setInterval(getCasablancaTime,1000)
+
+        function getNewyorkTime(){
+            document.getElementById("newyork").innerHTML= new Date().toLocaleString("en-us",{timeZone:'America/New_York',
+            timeStyle: 'medium',hourCycle:'h12'});
+        }
+        getNewyorkTime();
+        setInterval(getNewyorkTime,1000)
+    </script>
+
+
+        </script>
+    
+    
+</body>
+</html>
